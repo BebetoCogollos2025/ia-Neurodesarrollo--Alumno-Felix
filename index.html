@@ -58,8 +58,35 @@
 
     <section id="videos">
       <h2>Videos Educativos</h2>
-      <iframe width="560" height="315" src="https://www.youtube.com/watch?v=vyZnvgvgm5c" title="IA en la educación" frameborder="0" allowfullscreen></iframe>
-    </section>
+     <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproducir Video de YouTube</title>
+</head>
+<body>
+    <h1>Reproducir Video de YouTube</h1>
+    <p>Haz clic en el botón para ver el video:</p>
+    
+    <!-- Botón para abrir el video de YouTube en un iframe -->
+    <button onclick="mostrarVideo()">Ver Video</button>
+    
+    <!-- Contenedor del video (inicialmente oculto) -->
+    <div id="videoContainer" style="display:none;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/vyZnvgvgm5c" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+    </div>
+
+    <script>
+        // Función de JavaScript para mostrar el video cuando se haga clic en el botón
+        function mostrarVideo() {
+            document.getElementById('videoContainer').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
 
     <section id="contacto">
       <h2>Contacto</h2>
