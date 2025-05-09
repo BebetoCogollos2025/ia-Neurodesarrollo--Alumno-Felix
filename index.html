@@ -46,7 +46,7 @@
       <h2>Uso de la IA en la intervención</h2>
       <p>Desde asistentes virtuales hasta análisis de patrones de comportamiento, descubre cómo la tecnología puede apoyar el proceso educativo.</p>
     </section>
-   <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -122,6 +122,13 @@
             margin-top: 20px;
             text-align: center;
         }
+        #next-btn {
+            background-color: #28a745;
+            margin-top: 20px;
+        }
+        #next-btn:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
@@ -158,6 +165,7 @@
             <!-- La pregunta y las opciones se mostrarán aquí -->
         </div>
         <div id="result" class="result"></div>
+        <button id="next-btn" onclick="nextQuestion()" style="display:none;">Siguiente Pregunta</button>
     </section>
 
 </div>
@@ -236,11 +244,24 @@
         if (isCorrect) {
             score++;
         }
+        // Desactivar las respuestas una vez seleccionadas
+        const buttons = document.querySelectorAll('.game-container button');
+        buttons.forEach(button => button.disabled = true);
+
+        // Mostrar el botón de siguiente pregunta
+        document.getElementById('next-btn').style.display = 'block';
+    }
+
+    // Pasar a la siguiente pregunta
+    function nextQuestion() {
+        // Aumentar el índice de la pregunta actual
         currentQuestionIndex++;
 
         // Si hay más preguntas, mostrar la siguiente
         if (currentQuestionIndex < questions.length) {
             showQuestion();
+            // Ocultar el botón de siguiente pregunta
+            document.getElementById('next-btn').style.display = 'none';
         } else {
             showResult();
         }
@@ -260,71 +281,6 @@
 
 </body>
 </html>
-
-<header>
-    <h1>El Uso de la IA en la Intervención Educativa</h1>
-    <p>Explora cómo la inteligencia artificial está revolucionando la educación.</p>
-</header>
-
-<div class="container">
-
-    <section>
-        <h2>¿Cómo ayuda la Inteligencia Artificial en la educación?</h2>
-        <p>La inteligencia artificial (IA) está transformando la educación mediante tecnologías que pueden apoyar el proceso de enseñanza-aprendizaje. Desde asistentes virtuales hasta el análisis de patrones de comportamiento, la IA facilita un aprendizaje más personalizado y eficiente.</p>
-        
-        <h3>Algunos ejemplos del uso de la IA en la educación incluyen:</h3>
-        <ul>
-            <li><strong>Asistentes Virtuales:</strong> Ayudan a responder preguntas frecuentes y organizar tareas.</li>
-            <li><strong>Análisis de Patrones de Comportamiento:</strong> Identifican problemas de aprendizaje y personalizan la experiencia educativa.</li>
-            <li><strong>Gamificación:</strong> Juegos educativos que adaptan el nivel de dificultad según el progreso del estudiante.</li>
-        </ul>
-    </section>
-
-    <section class="image-container">
-        <h2>Explora la IA en la Educación</h2>
-        <p>Haz clic en la imagen para aprender más sobre cada área de la inteligencia artificial en la educación.</p>
-        <!-- Imagen Interactiva -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Artificial_intelligence_in_education.svg" alt="IA en Educación" id="interactiveImage" onclick="alert('¡Explora más sobre la IA en la educación!')">
-    </section>
-
-    <section class="game-container">
-        <h2>Juego Interactivo: ¿Qué Hizo la IA por Ti Hoy?</h2>
-        <div class="question">
-            <p><strong>Pregunta 1:</strong> ¿Qué hace un asistente virtual en el ámbito educativo?</p>
-            <button onclick="checkAnswer('A')">A) Responde preguntas frecuentes</button>
-            <button onclick="checkAnswer('B')">B) Enseña clases de matemáticas</button>
-            <button onclick="checkAnswer('C')">C) Reemplaza a los profesores</button>
-        </div>
-
-        <div id="result" class="result"></div>
-    </section>
-
-</div>
-
-<script>
-    // Función para mostrar los resultados del juego
-    function checkAnswer(answer) {
-        let resultText = '';
-        if (answer === 'A') {
-            resultText = '¡Correcto! Los asistentes virtuales responden preguntas frecuentes y ayudan a organizar las tareas.';
-        } else {
-            resultText = 'Incorrecto. La respuesta correcta es: A) Responde preguntas frecuentes.';
-        }
-        document.getElementById('result').innerText = resultText;
-    }
-</script>
-
-</body>
-</html>
-
-    <section id="recursos">
-      <h2>Recursos y Enlaces</h2>
-      <ul>
-        <li><a href="https://chat.openai.com/" target="_blank">ChatGPT</a></li>
-        <li><a href="https://bard.google.com/" target="_blank">Google Bard</a></li>
-        <li><a href="https://www.perplexity.ai/" target="_blank">Perplexity AI</a></li>
-      </ul>
-    </section>
 
     <section id="videos">
       <h2>Videos Educativos</h2>
