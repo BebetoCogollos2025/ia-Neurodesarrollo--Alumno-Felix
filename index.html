@@ -205,7 +205,6 @@
                 { answer: "Eliminar tareas académicas", correct: false }
             ]
         },
-        // Agrega más preguntas aquí siguiendo el mismo formato
         {
             question: "¿Cuál es una ventaja de la IA en la educación?",
             options: [
@@ -214,7 +213,6 @@
                 { answer: "Eliminación de la enseñanza presencial", correct: false }
             ]
         },
-        // Agrega más preguntas según sea necesario
     ];
 
     let currentQuestionIndex = 0;
@@ -224,8 +222,10 @@
     function showQuestion() {
         const questionData = questions[currentQuestionIndex];
         const questionContainer = document.getElementById('question-container');
+        const resultContainer = document.getElementById('result');
+        resultContainer.innerHTML = ''; // Limpiar resultados previos
 
-        // Limpiar el contenedor
+        // Limpiar el contenedor de opciones
         questionContainer.innerHTML = `
             <p><strong>Pregunta ${currentQuestionIndex + 1}:</strong> ${questionData.question}</p>
         `;
@@ -234,16 +234,21 @@
         questionData.options.forEach((option, index) => {
             const button = document.createElement('button');
             button.textContent = option.answer;
-            button.onclick = () => checkAnswer(option.correct);
+            button.onclick = () => checkAnswer(option, questionData);
             questionContainer.appendChild(button);
         });
     }
 
     // Comprobar la respuesta
-    function checkAnswer(isCorrect) {
-        if (isCorrect) {
+    function checkAnswer(option, questionData) {
+        const resultContainer = document.getElementById('result');
+        if (option.correct) {
+            resultContainer.innerHTML = '<p>¡Correcto! 😊</p>';
             score++;
+        } else {
+            resultContainer.innerHTML = '<p>Incorrecto. 😞</p>';
         }
+
         // Desactivar las respuestas una vez seleccionadas
         const buttons = document.querySelectorAll('.game-container button');
         buttons.forEach(button => button.disabled = true);
@@ -254,7 +259,6 @@
 
     // Pasar a la siguiente pregunta
     function nextQuestion() {
-        // Aumentar el índice de la pregunta actual
         currentQuestionIndex++;
 
         // Si hay más preguntas, mostrar la siguiente
@@ -282,6 +286,7 @@
 </body>
 </html>
 
+    
     <section id="videos">
       <h2>Videos Educativos</h2>
  <!DOCTYPE html>
