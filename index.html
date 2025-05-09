@@ -46,7 +46,7 @@
       <h2>Uso de la IA en la intervención</h2>
       <p>Desde asistentes virtuales hasta análisis de patrones de comportamiento, descubre cómo la tecnología puede apoyar el proceso educativo.</p>
     </section>
-    <!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -125,6 +125,141 @@
     </style>
 </head>
 <body>
+
+<header>
+    <h1>El Uso de la IA en la Intervención Educativa</h1>
+    <p>Explora cómo la inteligencia artificial está revolucionando la educación.</p>
+</header>
+
+<div class="container">
+
+    <section>
+        <h2>¿Cómo ayuda la Inteligencia Artificial en la educación?</h2>
+        <p>La inteligencia artificial (IA) está transformando la educación mediante tecnologías que pueden apoyar el proceso de enseñanza-aprendizaje. Desde asistentes virtuales hasta el análisis de patrones de comportamiento, la IA facilita un aprendizaje más personalizado y eficiente.</p>
+        
+        <h3>Algunos ejemplos del uso de la IA en la educación incluyen:</h3>
+        <ul>
+            <li><strong>Asistentes Virtuales:</strong> Ayudan a responder preguntas frecuentes y organizar tareas.</li>
+            <li><strong>Análisis de Patrones de Comportamiento:</strong> Identifican problemas de aprendizaje y personalizan la experiencia educativa.</li>
+            <li><strong>Gamificación:</strong> Juegos educativos que adaptan el nivel de dificultad según el progreso del estudiante.</li>
+        </ul>
+    </section>
+
+    <section class="image-container">
+        <h2>Explora la IA en la Educación</h2>
+        <p>Haz clic en la imagen para aprender más sobre cada área de la inteligencia artificial en la educación.</p>
+        <!-- Imagen Interactiva -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Artificial_intelligence_in_education.svg" alt="IA en Educación" id="interactiveImage" onclick="alert('¡Explora más sobre la IA en la educación!')">
+    </section>
+
+    <section class="game-container">
+        <h2>Juego Interactivo: ¿Qué Hizo la IA por Ti Hoy?</h2>
+        <div id="question-container" class="question">
+            <!-- La pregunta y las opciones se mostrarán aquí -->
+        </div>
+        <div id="result" class="result"></div>
+    </section>
+
+</div>
+
+<script>
+    // Definir las preguntas y respuestas
+    const questions = [
+        {
+            question: "¿Qué hace un asistente virtual en el ámbito educativo?",
+            options: [
+                { answer: "Responde preguntas frecuentes", correct: true },
+                { answer: "Enseña clases de matemáticas", correct: false },
+                { answer: "Reemplaza a los profesores", correct: false }
+            ]
+        },
+        {
+            question: "¿Qué tecnología utiliza la IA para personalizar el aprendizaje?",
+            options: [
+                { answer: "Análisis de datos", correct: true },
+                { answer: "Realidad aumentada", correct: false },
+                { answer: "Recursos impresos", correct: false }
+            ]
+        },
+        {
+            question: "¿Qué es la gamificación en educación?",
+            options: [
+                { answer: "Uso de videojuegos para enseñar", correct: false },
+                { answer: "Aplicación de juegos para motivar a los estudiantes", correct: true },
+                { answer: "Evaluaciones continuas sin retroalimentación", correct: false }
+            ]
+        },
+        {
+            question: "¿Cuál es el objetivo de analizar patrones de comportamiento de los estudiantes?",
+            options: [
+                { answer: "Identificar fortalezas y debilidades", correct: true },
+                { answer: "Reemplazar a los maestros", correct: false },
+                { answer: "Eliminar tareas académicas", correct: false }
+            ]
+        },
+        // Agrega más preguntas aquí siguiendo el mismo formato
+        {
+            question: "¿Cuál es una ventaja de la IA en la educación?",
+            options: [
+                { answer: "Personalización del aprendizaje", correct: true },
+                { answer: "Exámenes automáticos sin retroalimentación", correct: false },
+                { answer: "Eliminación de la enseñanza presencial", correct: false }
+            ]
+        },
+        // Agrega más preguntas según sea necesario
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    // Mostrar la primera pregunta
+    function showQuestion() {
+        const questionData = questions[currentQuestionIndex];
+        const questionContainer = document.getElementById('question-container');
+
+        // Limpiar el contenedor
+        questionContainer.innerHTML = `
+            <p><strong>Pregunta ${currentQuestionIndex + 1}:</strong> ${questionData.question}</p>
+        `;
+
+        // Mostrar las opciones de respuesta
+        questionData.options.forEach((option, index) => {
+            const button = document.createElement('button');
+            button.textContent = option.answer;
+            button.onclick = () => checkAnswer(option.correct);
+            questionContainer.appendChild(button);
+        });
+    }
+
+    // Comprobar la respuesta
+    function checkAnswer(isCorrect) {
+        if (isCorrect) {
+            score++;
+        }
+        currentQuestionIndex++;
+
+        // Si hay más preguntas, mostrar la siguiente
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+        } else {
+            showResult();
+        }
+    }
+
+    // Mostrar el resultado final
+    function showResult() {
+        const resultContainer = document.getElementById('result');
+        resultContainer.innerHTML = `
+            <p>¡Juego terminado! Tu puntaje es ${score} de ${questions.length}.</p>
+        `;
+    }
+
+    // Iniciar el juego
+    showQuestion();
+</script>
+
+</body>
+</html>
 
 <header>
     <h1>El Uso de la IA en la Intervención Educativa</h1>
