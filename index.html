@@ -46,6 +46,141 @@
       <h2>Uso de la IA en la intervención</h2>
       <p>Desde asistentes virtuales hasta análisis de patrones de comportamiento, descubre cómo la tecnología puede apoyar el proceso educativo.</p>
     </section>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de la IA en la Intervención Educativa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 80%;
+            max-width: 600px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+        .game-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .game-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .game-container .question {
+            margin-bottom: 20px;
+        }
+        .game-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .game-container button:hover {
+            background-color: #4169e1;
+        }
+        .result {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>El Uso de la IA en la Intervención Educativa</h1>
+    <p>Explora cómo la inteligencia artificial está revolucionando la educación.</p>
+</header>
+
+<div class="container">
+
+    <section>
+        <h2>¿Cómo ayuda la Inteligencia Artificial en la educación?</h2>
+        <p>La inteligencia artificial (IA) está transformando la educación mediante tecnologías que pueden apoyar el proceso de enseñanza-aprendizaje. Desde asistentes virtuales hasta el análisis de patrones de comportamiento, la IA facilita un aprendizaje más personalizado y eficiente.</p>
+        
+        <h3>Algunos ejemplos del uso de la IA en la educación incluyen:</h3>
+        <ul>
+            <li><strong>Asistentes Virtuales:</strong> Ayudan a responder preguntas frecuentes y organizar tareas.</li>
+            <li><strong>Análisis de Patrones de Comportamiento:</strong> Identifican problemas de aprendizaje y personalizan la experiencia educativa.</li>
+            <li><strong>Gamificación:</strong> Juegos educativos que adaptan el nivel de dificultad según el progreso del estudiante.</li>
+        </ul>
+    </section>
+
+    <section class="image-container">
+        <h2>Explora la IA en la Educación</h2>
+        <p>Haz clic en la imagen para aprender más sobre cada área de la inteligencia artificial en la educación.</p>
+        <!-- Imagen Interactiva -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Artificial_intelligence_in_education.svg" alt="IA en Educación" id="interactiveImage" onclick="alert('¡Explora más sobre la IA en la educación!')">
+    </section>
+
+    <section class="game-container">
+        <h2>Juego Interactivo: ¿Qué Hizo la IA por Ti Hoy?</h2>
+        <div class="question">
+            <p><strong>Pregunta 1:</strong> ¿Qué hace un asistente virtual en el ámbito educativo?</p>
+            <button onclick="checkAnswer('A')">A) Responde preguntas frecuentes</button>
+            <button onclick="checkAnswer('B')">B) Enseña clases de matemáticas</button>
+            <button onclick="checkAnswer('C')">C) Reemplaza a los profesores</button>
+        </div>
+
+        <div id="result" class="result"></div>
+    </section>
+
+</div>
+
+<script>
+    // Función para mostrar los resultados del juego
+    function checkAnswer(answer) {
+        let resultText = '';
+        if (answer === 'A') {
+            resultText = '¡Correcto! Los asistentes virtuales responden preguntas frecuentes y ayudan a organizar las tareas.';
+        } else {
+            resultText = 'Incorrecto. La respuesta correcta es: A) Responde preguntas frecuentes.';
+        }
+        document.getElementById('result').innerText = resultText;
+    }
+</script>
+
+</body>
+</html>
 
     <section id="recursos">
       <h2>Recursos y Enlaces</h2>
