@@ -58,33 +58,58 @@
 
     <section id="videos">
       <h2>Videos Educativos</h2>
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vista previa y Reproducción en YouTube</title>
     <style>
+        /* Estilo para la miniatura */
         .video-thumbnail {
             width: 560px; /* Tamaño de la miniatura */
             cursor: pointer;
-            transition: transform 0.3s ease; /* Efecto al pasar el ratón */
+            transition: transform 0.3s ease; /* Efecto de zoom */
         }
+
+        /* Efecto de zoom al pasar el ratón sobre la miniatura */
         .video-thumbnail:hover {
-            transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+            transform: scale(1.05);
+        }
+
+        /* Estilo para el contenedor del iframe */
+        #videoContainer {
+            display: none;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <h1>Vista Previa del Video</h1>
-    <p>Haz clic en la imagen para ver el video en YouTube:</p>
+    <p>Haz clic en la imagen para ver el video en esta página:</p>
 
     <!-- Miniatura del video -->
-    <a href="https://www.youtube.com/watch?v=vyZnvgvgm5c" target="_blank">
-        <img class="video-thumbnail" 
-             src="https://img.youtube.com/vi/vyZnvgvgm5c/maxresdefault.jpg" 
-             alt="Vista previa del video de YouTube">
-    </a>
+    <img class="video-thumbnail" 
+         src="https://img.youtube.com/vi/vyZnvgvgm5c/maxresdefault.jpg" 
+         alt="Vista previa del video de YouTube" 
+         onclick="mostrarVideo()">
+
+    <!-- Contenedor para el video (inicialmente oculto) -->
+    <div id="videoContainer">
+        <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/vyZnvgvgm5c?autoplay=1" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+    </div>
+
+    <script>
+        // Función para mostrar el video cuando se hace clic en la miniatura
+        function mostrarVideo() {
+            document.getElementById('videoContainer').style.display = 'block'; // Muestra el video
+        }
+    </script>
 </body>
 </html>
 
