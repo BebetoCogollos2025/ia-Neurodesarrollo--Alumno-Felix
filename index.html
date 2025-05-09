@@ -277,6 +277,7 @@
         resultContainer.innerHTML = `
             <p>¡Juego terminado! Tu puntaje es ${score} de ${questions.length}.</p>
         `;
+        document.getElementById('next-btn').style.display = 'none';  // Ocultar el botón de siguiente pregunta
     }
 
     // Iniciar el juego
@@ -285,7 +286,6 @@
 
 </body>
 </html>
-
     
     <section id="videos">
       <h2>Videos Educativos</h2>
