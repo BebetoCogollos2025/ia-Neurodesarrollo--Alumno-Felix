@@ -58,28 +58,36 @@
 
     <section id="videos">
       <h2>Videos Educativos</h2>
-   <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reproducir Video de YouTube</title>
+    <title>Vista previa y Reproducción en YouTube</title>
+    <style>
+        .video-thumbnail {
+            width: 560px; /* Tamaño de la miniatura */
+            cursor: pointer;
+            transition: transform 0.3s ease; /* Efecto al pasar el ratón */
+        }
+        .video-thumbnail:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+        }
+    </style>
 </head>
 <body>
-    <h1>Ver Video de YouTube</h1>
-    <p>Haz clic en el botón para ver el video:</p>
+    <h1>Vista Previa del Video</h1>
+    <p>Haz clic en la imagen para ver el video en YouTube:</p>
 
-    <!-- Botón para mostrar el video -->
-    <button onclick="mostrarVideo()">Ver Video</button>
+    <!-- Miniatura del video -->
+    <a href="https://www.youtube.com/watch?v=vyZnvgvgm5c" target="_blank">
+        <img class="video-thumbnail" 
+             src="https://img.youtube.com/vi/vyZnvgvgm5c/maxresdefault.jpg" 
+             alt="Vista previa del video de YouTube">
+    </a>
+</body>
+</html>
 
-    <!-- Contenedor para el video (oculto por defecto) -->
-    <div id="videoContainer" style="display:none; margin-top: 20px;">
-        <iframe width="560" height="315" 
-                src="https://www.youtube.com/embed/vyZnvgvgm5c?autoplay=1" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
     </div>
 
     <script>
