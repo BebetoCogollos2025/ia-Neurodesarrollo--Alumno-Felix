@@ -58,21 +58,36 @@
 
     <section id="videos">
       <h2>Videos Educativos</h2>
-    <!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>Reproducir Video de YouTube</title>
 </head>
 <body>
-    <h1>Bienvenido a Mi Página Web</h1>
-    
-    <!-- Aquí puedes agregar el código del video -->
-    <h2>Ver Video de YouTube</h2>
+    <h1>Ver Video de YouTube</h1>
     <p>Haz clic en el botón para ver el video:</p>
-    <button onclick="window.open('https://www.youtube.com/watch?v=vyZnvgvgm5c', '_blank')">Ver Video en YouTube</button>
-    
+
+    <!-- Botón para mostrar el video -->
+    <button onclick="mostrarVideo()">Ver Video</button>
+
+    <!-- Contenedor para el video (oculto por defecto) -->
+    <div id="videoContainer" style="display:none; margin-top: 20px;">
+        <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/vyZnvgvgm5c?autoplay=1" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+    </div>
+
+    <script>
+        // Función de JavaScript para mostrar el video cuando se hace clic en el botón
+        function mostrarVideo() {
+            document.getElementById('videoContainer').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
 
